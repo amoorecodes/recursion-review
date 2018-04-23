@@ -3,5 +3,18 @@
 
 // but you're not, so you'll write it from scratch:
 var parseJSON = function(json) {
-  // your code goes here
+  // write out simple cases
+  if (json === 'true') {
+    return true;
+  } else if (json === 'false') {
+    return false;
+  } else if (json === 'null') {
+    return null;
+  } else if (json === 'undefined') {
+    return undefined;
+  }
+  //string conditional
+  //number conditional
+  //array conditional
+  //object conditional
 };
