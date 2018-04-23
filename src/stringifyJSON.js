@@ -49,7 +49,10 @@ var stringifyJSON = function(obj) {
   if(typeof obj === 'object') {
     var result = [];
     for(var key in obj) {
-      result.push(stringifyJSON(key) + ':' + stringifyJSON(obj[key]));
+      if(obj[key] !== undefined && !(obj[key] instanceof Function)) {
+        result.push(stringifyJSON(key) + ':' + stringifyJSON(obj[key]));
+      }
+
     }
     return '{' + result.join(',') + '}';
   }
