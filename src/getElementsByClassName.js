@@ -18,11 +18,13 @@ var getElementsByClassName = function(className
   var results = [];
 
   var hasChildren = function (input) {
-    if (input.classList.hasOwnProperty(className)) {
-      results.push(input);
-    }  
+    if (input.classList !== undefined) {
+      if (input.classList.contains(className)) {
+        results.push(input);
+      }  
+    }
     if (input.hasChildNodes()) {
-      _.each(input.childNodes, hasChildren);
+      input.childNodes.forEach(child => hasChildren(child));
     }
   };
 
