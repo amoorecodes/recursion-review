@@ -39,4 +39,18 @@ var stringifyJSON = function(obj) {
     return '[' + result.join(',') + ']';
   }
   //conditional statement for non-array objects
+    /*
+    test if obj is object
+    iterate through each key
+    perform stringifyJSON on each key and value and store in array
+    return in JSON format using .join on array
+    
+    */
+  if(typeof obj === 'object') {
+    var result = [];
+    for(var key in obj) {
+      result.push(stringifyJSON(key) + ':' + stringifyJSON(obj[key]));
+    }
+    return '{' + result.join(',') + '}';
+  }
 };
