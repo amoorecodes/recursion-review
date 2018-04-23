@@ -17,10 +17,10 @@ var getElementsByClassName = function(className
 
   var parent = document.body;
   var results = [];
-  if(parent.hasChildNodes()) {
+  if (parent.hasChildNodes()) {
     var allNodes = document.body.childNodes;
-    for(var i = 0; i < allNodes.length; i++) {
-      if(allNodes[i].classList.hasOwnProperty(className)) {
+    for (var i = 0; i < allNodes.length; i++) {
+      if (allNodes[i].classList.hasOwnProperty(className)) {
         results.push(allNodes[i]);
       }
       //if(allNodes[i].hasChildNodes())
