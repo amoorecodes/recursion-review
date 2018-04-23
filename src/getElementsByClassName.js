@@ -15,16 +15,25 @@ var getElementsByClassName = function(className
   base case === no more children
   */
 
-  var parent = document.body;
   var results = [];
-  if (parent.hasChildNodes()) {
-    var allNodes = document.body.childNodes;
-    for (var i = 0; i < allNodes.length; i++) {
-      if (allNodes[i].classList.hasOwnProperty(className)) {
-        results.push(allNodes[i]);
-      }
-      //if(allNodes[i].hasChildNodes())
+
+  var hasChildren = function (input) {
+    if (input.classList.hasOwnProperty(className)) {
+      results.push(input);
+    }  
+    if (input.hasChildNodes()) {
+      _.each(input.childNodes, hasChildren);
     }
-  }
+  };
+
+  hasChildren(document.body);
+  return results;
 
 };
+
+
+/*
+
+
+
+*/
