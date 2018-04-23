@@ -8,4 +8,23 @@ var stringifyJSON = function(obj) {
   if(typeof obj === 'number'){
     return obj.toString();
   }
+  //conditional statement for strings
+  if(typeof obj === 'string'){
+    return '"' + obj + '"';
+  }
+  //conditional statement for boolean
+  if(typeof obj === 'boolean'){
+    return '' + obj;
+  }
+  //conditional statement for null
+  if(obj === null){
+    return '' + obj;
+  }
+  //conditional statement for undefined
+  if(obj === undefined){
+    return '' + obj;
+  }
+  //conditional statement for arrays
+  
+  //conditional statement for non-array objects
 };
