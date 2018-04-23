@@ -25,6 +25,18 @@ var stringifyJSON = function(obj) {
     return '' + obj;
   }
   //conditional statement for arrays
-  
+      /*
+      we need to test igf obj is array
+      iterate through array
+      perform stringifyJSON on every element
+      return in JSON format using .join
+      */
+  if(Array.isArray(obj)){
+    var result = [];
+    for(var i = 0; i < obj.length; i++) {
+      result.push(stringifyJSON(obj[i]));
+    }
+    return '[' + result.join(',') + ']';
+  }
   //conditional statement for non-array objects
 };
