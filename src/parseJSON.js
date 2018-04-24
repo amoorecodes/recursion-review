@@ -17,7 +17,6 @@ var parseJSON = function(json) {
   } else if (!isNaN(json)) {
     return Number(json);
   }
-
   //array conditional
   //object conditional
 };
