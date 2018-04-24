@@ -12,9 +12,12 @@ var parseJSON = function(json) {
     return null;
   } else if (json === 'undefined') {
     return undefined;
+  } else if (json[0] === '"' && json[json.length - 1] === '"') {
+    return json;
+  } else if (!isNaN(json)) {
+    return Number(json);
   }
-  //string conditional
-  //number conditional
+
   //array conditional
   //object conditional
 };
